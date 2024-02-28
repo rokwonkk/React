@@ -1,5 +1,5 @@
 {
-  "name": "react_router",
+  "name": "react_project_samples",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,13 +8,15 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.7",
     "react": "^18.2.0",
+    "react-cookie": "^7.1.0",
     "react-dom": "^18.2.0",
+    "react-js-pagination": "^3.0.3",
     "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "export PORT=3300 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

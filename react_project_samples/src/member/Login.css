@@ -1,0 +1,30 @@
+.login {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#loginform {
+    width : 300px;
+    height: 100%;
+    margin : 50px auto;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 8px 8px 5px lightgray;
+    text-align: center;
+  }
+  #loginBtn {
+    text-align: center;
+  }
+  #find {
+    float: right;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  #logininput{
+    margin : 5px;
+  }
+  .btn.btn-primary.login, .btn.btn-secondary.login, .btn.btn-light.login {
+    width: 100%;
+    margin-bottom: 5px;
+  }
