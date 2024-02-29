@@ -1,9 +1,0 @@
-.mytable {
-    width: 800px;
-    border: 1px solid lightgray;
-}
-
-.btn.btn-info.bbs, .btn.btn-secondary.bbs, .btn.btn-light.bbs {
-    margin-right: 10px;
-    text-align: center;
-}

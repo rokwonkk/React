@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
-import './Bbsdetail.css';
+import './Bbs.css';
 
 const Bbsdetail = () => {
 
@@ -43,7 +43,6 @@ const Bbsdetail = () => {
             //console.log(str);
             let login = JSON.parse(str);
             setId(login.id);
-            console.log(id);
         } else {
             //alert('login 페이지로 이동합니다.');
             localStorage.setItem("before", "/bbsdetail/" + params.seq);
@@ -57,10 +56,30 @@ const Bbsdetail = () => {
 
         getBbs(params.seq);
 
-    }, []);
+    }, [params.seq, navigate]);
 
     const updatebbs = () => {
         navigate("/bbsupdate/" + params.seq);
+    }
+
+    const deletebbs = () => {
+        axios
+            .get("http://localhost:9922/bbsdelete",
+                {
+                    params: {
+                        "seq": params.seq
+                    }
+                })
+            .then((res) => {
+                console.log(res.data);
+                if (res.data === 'success') {
+                    alert('삭제에 성공하였습니다.');
+                    navigate('/bbslist');
+                }
+            })
+            .catch((e) => {
+                console.log(e);
+            })
     }
 
     if (loading === false) {
@@ -77,14 +96,18 @@ const Bbsdetail = () => {
 
         if (id === bbs.id) {
             return (
-                <div>
+                <div className="btn bbsdetail">
                     <button type="button" className="btn btn-info bbs" onClick={returnlist}>글목록으로</button>
                     <button type="button" className="btn btn-info bbs" onClick={updatebbs}>글 수정</button>
-                    <button type="button" className="btn btn-info bbs" onClick={""}>글 삭제</button>
+                    <button type="button" className="btn btn-info bbs" onClick={deletebbs}>글 삭제</button>
                 </div>
             )
         }
-        return <button type="button" className="btn btn-info bbs" onClick={returnlist}>글목록으로</button>;
+        return (
+            <div className="btn bbsdetail">
+                <button type="button" className="btn btn-info bbs" onClick={returnlist}>글목록으로</button>
+            </div>
+        )
     }
 
     return (

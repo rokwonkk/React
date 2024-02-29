@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
-import './Bbsdetail.css';
+import './Bbs.css';
 
 const Bbsupdate = () => {
 
@@ -42,14 +42,13 @@ const Bbsupdate = () => {
     }
 
     useEffect(() => {
-
         //login 확인
         let str = localStorage.getItem("login");
         if (str !== null && str !== '') { //login 되어있을 경우
             //console.log(str);
             let login = JSON.parse(str);
             setId(login.id);
-            console.log(id);
+            //console.log(id);
         } else {
             //alert('login 페이지로 이동합니다.');
             localStorage.setItem("before", "/bbsdetail/" + params.seq);
@@ -63,7 +62,7 @@ const Bbsupdate = () => {
 
         getBbs(params.seq);
 
-    }, []);
+    }, [navigate, params.seq, id]);
 
     const updateSuccess = async() => {
 
@@ -133,8 +132,10 @@ const Bbsupdate = () => {
                     </tr>
                 </tbody>
             </table>
+            <div className="btn bbsupdate">
             <button type="button" className="btn btn-info bbs" onClick={returnlist}>글목록으로</button>
             <button type="button" className="btn btn-info bbs" onClick={updateSuccess}>수정완료</button>
+            </div>
         </div>
     )
 }

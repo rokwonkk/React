@@ -2,23 +2,21 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import Home from './component/Home';
-
-import openholy from './asset/open-holy.jpeg';
+import Header from './component/Header';
+import Footer from './component/Footer';
 import Bbslist from './bbs/Bbslist';
 import Bbswrite from './bbs/Bbswrite';
-import Login from './member/Login';
 import Bbsdetail from './bbs/Bbsdetail';
-import Regi from './member/Regi';
 import Bbsupdate from './bbs/Bbsupdate';
+import Login from './member/Login';
+import Regi from './member/Regi';
 
 const App = () => {
 
   return (
     <div>
       <header className='py-4'>
-        <div className='container text-center'>
-          <img src={openholy} alt="no" width='960' height='150' />
-        </div>
+        <Header />
       </header>
 
       <BrowserRouter>
@@ -45,7 +43,7 @@ const App = () => {
             <div className='container'>
               <Routes>
                 <Route path='/' element={<Home />} />
-                
+
                 <Route path='/bbslist' element={<Bbslist />} />
                 <Route path='/bbswrite' element={<Bbswrite />} />
                 <Route path='/bbsdetail/:seq' element={<Bbsdetail />} />
@@ -53,7 +51,7 @@ const App = () => {
 
                 <Route path='/login' element={<Login />} />
                 <Route path='/regi' element={<Regi />} />
-                
+
               </Routes>
             </div>
           </div>
@@ -61,16 +59,7 @@ const App = () => {
       </BrowserRouter>
 
       <footer className="py-4 bg-info text-light">
-        <div className="container text-center">
-          <ul className="nav justify-content-center mb-3">
-            <li className='nav-item'>
-              <a className='nav-link' href='/'>Top</a>
-            </li>
-          </ul>
-          <p>
-            <small>Copyright &copy;Graphic Arts</small>
-          </p>
-        </div>
+        <Footer />
       </footer>
     </div>
   );

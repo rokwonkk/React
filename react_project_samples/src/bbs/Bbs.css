@@ -1,0 +1,52 @@
+/* 게시판 기본 */
+th {
+    border: 1px solid lightgray;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 15px;
+    
+    color: white;
+    background-color: #4BA0B5;
+}
+/* 게시판 기본 끝 */
+
+/* 게시판 페이지네이션 */
+.pagination {
+    display: flex;    
+    justify-content: center;     
+}
+
+.page-item.active .page-link {
+    background-color: #4BA0B5;
+    border-color: #4BA0B5;
+}
+/* 페이지네이션 끝*/
+
+/* 테이블 커스텀 */
+.table th {
+    vertical-align: middle;
+}
+
+.mytable {
+    width: 800px;
+    border: 1px solid lightgray;
+}
+/* 테이블 커스텀 끝 */
+
+/* 게시판 버튼 관련 */
+.btn.btn-primary.bbswrite, .btn.btn-info.bbswrite, .btn.btn-info.bbs {
+    margin-right: 10px;
+}
+
+.btn.bbsdetail, .btn.bbsupdate {
+    display: flex;
+    justify-content: center;
+}
+/* 게시판 버튼 관련 끝 */
+
+/* 게시판 상세 */
+.underline:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* 게시판 상세 끝 */

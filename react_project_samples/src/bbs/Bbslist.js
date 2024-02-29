@@ -4,8 +4,7 @@ import Pagination from 'react-js-pagination'; //npm i react-js-pagination
 import axios from 'axios';
 
 import arrow from '../asset/arrow1.png';
-import "./Bbslist.css";
-import "./page.css";
+import "./Bbs.css";
 
 const Bbslist = () => {
 
