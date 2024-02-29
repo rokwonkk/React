@@ -70,7 +70,7 @@ const Bbslist = () => {
             <table style={{ marginLeft: "auto", marginRight: 'auto', marginTop: "3px", marginBottom: "3px" }}>
                 <tbody>
                     <tr>
-                        <td style={{ paddingLeft: "3px" }}>
+                        <td style={{ paddingLeft: "3px"}}>
                             <select className='custom-select' value={choice}
                                 onChange={(e) => { setChoice(e.target.value) }}>
                                 <option value="">검색</option>
@@ -84,7 +84,7 @@ const Bbslist = () => {
                                 onChange={(e) => { setSearch(e.target.value) }} />
                         </td>
                         <td style={{ paddingLeft: "5px" }}>
-                            <button className='btn btn-primary'
+                            <button className='btn btn-info'
                                 onClick={() => searchBtn()}>검색</button>
                         </td>
                     </tr>
@@ -144,7 +144,7 @@ const Bbslist = () => {
             />
 
             <div className='my-5 d-flex justify-content-center'>
-                <Link className='btn btn-primary' to="/bbswrite">글쓰기</Link>
+                <Link className='btn btn-info' to="/bbswrite">글쓰기</Link>
             </div>
 
             <br /><br /><br /><br />

@@ -7,6 +7,9 @@ import openholy from './asset/open-holy.jpeg';
 import Bbslist from './bbs/Bbslist';
 import Bbswrite from './bbs/Bbswrite';
 import Login from './member/Login';
+import Bbsdetail from './bbs/Bbsdetail';
+import Regi from './member/Regi';
+import Bbsupdate from './bbs/Bbsupdate';
 
 const App = () => {
 
@@ -45,8 +48,11 @@ const App = () => {
                 
                 <Route path='/bbslist' element={<Bbslist />} />
                 <Route path='/bbswrite' element={<Bbswrite />} />
-                
+                <Route path='/bbsdetail/:seq' element={<Bbsdetail />} />
+                <Route path='/bbsupdate/:seq' element={<Bbsupdate />} />
+
                 <Route path='/login' element={<Login />} />
+                <Route path='/regi' element={<Regi />} />
                 
               </Routes>
             </div>

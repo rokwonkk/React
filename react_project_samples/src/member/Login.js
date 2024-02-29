@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Axios from "axios";
+import axios from "axios";
 
 import './Login.css';
 
 //리액트 쿠키사용
 import { useCookies } from 'react-cookie'; // npm i react-cookie
-import axios from "axios";
 
 const Login = () => {
 
@@ -65,7 +64,7 @@ const Login = () => {
                         //여기서 JWT token을 받는다.
     
                         localStorage.setItem("login", JSON.stringify(res.data));
-
+                        
                         //(전 페이지로) 이동
                         let before = localStorage.getItem("before");
                         navigete(before);
@@ -119,12 +118,12 @@ const Login = () => {
                 <input type='password' className='form-control' value={pw} onChange={(e)=>setPw(e.target.value)} placeholder='비밀번호를 입력해주세요' />
             </div>
             <div id="find">
-                <input type="checkbox" checked={saveId} onChange={checkHandler} />&nbsp; id 저장 &nbsp;&nbsp;
-                <span><Link to="/">아이디 찾기</Link></span> / <span><Link to="/regi">비밀번호 찾기</Link></span>
+                <span><input type="checkbox" checked={saveId} onChange={checkHandler} />&nbsp; id 저장</span>
+                <span><Link to="/">아이디 찾기</Link> / <Link to="/">비밀번호 찾기</Link></span>
             </div>
             <div id="loginBtn">
                 <button className='btn btn-primary login' onClick={() => loginAf()}>로그인</button>
-                <button className='btn btn-secondary login'>회원가입</button>
+                <button className='btn btn-secondary login' onClick={ () => navigete("/regi") }>회원가입</button>
             </div>
             <hr />
             <div id="snsLogin">

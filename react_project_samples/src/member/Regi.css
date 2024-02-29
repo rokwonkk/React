@@ -1,0 +1,20 @@
+.center {
+    margin: auto;
+    width: 400px;
+    border: 1px solid #a1a1a1;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 8px 8px 5px lightgray;
+}
+
+.title {
+    text-align: center;
+}
+
+.tbody {
+    width: 100%;
+}
+
+.btn.btn-primary.regi {
+    width: 100%;
+}

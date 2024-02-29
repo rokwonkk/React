@@ -83,3 +83,8 @@ ul.pagination li a.active {
     display: flex;    
     justify-content: center;     
 }
+
+.page-item.active .page-link {
+    background-color: #4BA0B5;
+    border-color: #4BA0B5;
+}
