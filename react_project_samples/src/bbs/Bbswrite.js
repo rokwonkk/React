@@ -34,10 +34,6 @@ const Bbswrite = () => {
         }
     }, [navigate]);
 
-    const returnlist = () => {
-        navigate("/bbslist");
-    }
-
     const bbswrite = () => {
 
         //alert("z");
@@ -73,8 +69,8 @@ const Bbswrite = () => {
             <h1>글쓰기</h1>
             <table className="table table-bordered">
                 <colgroup>
-                    <col style={{ width:'150px' }}/>
-                    <col style={{ width:'500px' }}/>
+                    <col style={{ width: '150px' }} />
+                    <col style={{ width: '500px' }} />
                 </colgroup>
                 <tbody>
                     <tr>
@@ -97,7 +93,7 @@ const Bbswrite = () => {
             </table>
             <br />
             <button type="button" className="btn btn-info bbswrite" onClick={() => bbswrite()}>글작성완료</button>
-            <button type="button" className="btn btn-info bbswrite" onClick={returnlist}>글목록으로</button>
+            <button type="button" className="btn btn-info bbswrite" onClick={() => navigate("/bbslist")}>글목록으로</button>
         </div>
     )
 }

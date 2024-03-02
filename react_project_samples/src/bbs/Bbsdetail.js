@@ -14,26 +14,7 @@ const Bbsdetail = () => {
     let navigate = useNavigate();
 
     const [bbs, setBbs] = useState();
-    const [id, setId] = useState();
-
-    //객체를 받을때는 async, await 붙여줄 것.
-    const getBbs = async (seq) => {
-        await axios
-            .get("http://localhost:9922/bbsdetail2",
-                {
-                    params: {
-                        "seq": seq
-                    }
-                })
-            .then((res) => {
-                console.log(res.data);
-                setBbs(res.data);
-                setLoading(true);
-            })
-            .catch((e) => {
-                alert('error');
-            })
-    }
+    const [id, setId] = useState("");
 
     useEffect(() => {
 
@@ -52,15 +33,29 @@ const Bbsdetail = () => {
 
         //alert('seq : ' + params.seq);
 
-        //login이 되어 있는지?
+        //객체를 받을때는 async, await 붙여줄 것.
+        const getBbs = async (seq) => {
+            await axios
+                .get("http://localhost:9922/bbsdetail",
+                    {
+                        params: {
+                            "id": id,
+                            "seq": seq
+                        }
+                    })
+                .then((res) => {
+                    console.log(res.data);
+                    setBbs(res.data);
+                    setLoading(true);
+                })
+                .catch((e) => {
+                    alert('error');
+                })
+        };
 
-        getBbs(params.seq);
+        getBbs(params.seq, id);
 
-    }, [params.seq, navigate]);
-
-    const updatebbs = () => {
-        navigate("/bbsupdate/" + params.seq);
-    }
+    }, [params.seq, navigate, id]);
 
     const deletebbs = () => {
         axios
@@ -86,28 +81,19 @@ const Bbsdetail = () => {
         return <div>loading...</div>
     }
 
-    const returnlist = () => {
-        navigate("/bbslist");
-    }
-
     const Createbtn = () => {
         // console.log(id);
         // console.log(bbs.id);
 
-        if (id === bbs.id) {
-            return (
-                <div className="btn bbsdetail">
-                    <button type="button" className="btn btn-info bbs" onClick={returnlist}>글목록으로</button>
-                    <button type="button" className="btn btn-info bbs" onClick={updatebbs}>글 수정</button>
-                    <button type="button" className="btn btn-info bbs" onClick={deletebbs}>글 삭제</button>
-                </div>
-            )
+        if (id !== bbs.id) {
+            return "";
         }
         return (
-            <div className="btn bbsdetail">
-                <button type="button" className="btn btn-info bbs" onClick={returnlist}>글목록으로</button>
-            </div>
-        )
+            <>
+                <button type="button" className="btn btn-info bbs" onClick={() => navigate("/bbsupdate/" + params.seq)}>글 수정</button>
+                <button type="button" className="btn btn-info bbs" onClick={deletebbs}>글 삭제</button>
+            </>
+        );
     }
 
     return (
@@ -141,7 +127,11 @@ const Bbsdetail = () => {
                     </tr>
                 </tbody>
             </table>
-            {Createbtn()}
+            <div className="btn bbsdetail">
+                {Createbtn()}
+                <button type="button" onClick={() => { navigate("/bbsanswer/" + bbs.seq) }} className="btn btn-info bbs">답글작성</button>
+                <button type="button" className="btn btn-info bbs" onClick={() => navigate("/bbslist")}>글목록으로</button>
+            </div>
         </div>
     )
 }

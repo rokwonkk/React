@@ -64,26 +64,26 @@ const Bbsupdate = () => {
 
     }, [navigate, params.seq, id]);
 
-    const updateSuccess = async() => {
+    const updateSuccess = async () => {
 
         await axios
             .post("http://localhost:9922/bbsupdate",
-            null,
-            {
-                params : {
-                    "seq" : params.seq,
-                    "title" : title,
-                    "content" : content
-                }
-            })
-            .then((res)=>{
+                null,
+                {
+                    params: {
+                        "seq": params.seq,
+                        "title": title,
+                        "content": content
+                    }
+                })
+            .then((res) => {
                 console.log(res.data);
-                if(res.data === "success"){
+                if (res.data === "success") {
                     alert("글 수정에 성공하였습니다.");
                     navigate("/bbslist");
                 }
             })
-            .catch((e)=>{
+            .catch((e) => {
                 alert(e);
             })
 
@@ -96,7 +96,6 @@ const Bbsupdate = () => {
     const returnlist = () => {
         navigate("/bbslist");
     }
-
 
     return (
         <div>
@@ -133,8 +132,8 @@ const Bbsupdate = () => {
                 </tbody>
             </table>
             <div className="btn bbsupdate">
-            <button type="button" className="btn btn-info bbs" onClick={returnlist}>글목록으로</button>
-            <button type="button" className="btn btn-info bbs" onClick={updateSuccess}>수정완료</button>
+                <button type="button" className="btn btn-info bbs" onClick={returnlist}>글목록으로</button>
+                <button type="button" className="btn btn-info bbs" onClick={updateSuccess}>수정완료</button>
             </div>
         </div>
     )

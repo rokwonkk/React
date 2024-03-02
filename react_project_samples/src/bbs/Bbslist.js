@@ -69,7 +69,7 @@ const Bbslist = () => {
             <table style={{ marginLeft: "auto", marginRight: 'auto', marginTop: "3px", marginBottom: "3px" }}>
                 <tbody>
                     <tr>
-                        <td style={{ paddingLeft: "3px"}}>
+                        <td style={{ paddingLeft: "3px" }}>
                             <select className='custom-select' value={choice}
                                 onChange={(e) => { setChoice(e.target.value) }}>
                                 <option value="">검색</option>

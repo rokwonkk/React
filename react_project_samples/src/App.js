@@ -4,10 +4,13 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './component/Home';
 import Header from './component/Header';
 import Footer from './component/Footer';
+
 import Bbslist from './bbs/Bbslist';
 import Bbswrite from './bbs/Bbswrite';
 import Bbsdetail from './bbs/Bbsdetail';
 import Bbsupdate from './bbs/Bbsupdate';
+import Bbsanswer from './bbs/Bbsanswer';
+
 import Login from './member/Login';
 import Regi from './member/Regi';
 
@@ -48,6 +51,7 @@ const App = () => {
                 <Route path='/bbswrite' element={<Bbswrite />} />
                 <Route path='/bbsdetail/:seq' element={<Bbsdetail />} />
                 <Route path='/bbsupdate/:seq' element={<Bbsupdate />} />
+                <Route path='/bbsanswer/:seq' element={<Bbsanswer />} />
 
                 <Route path='/login' element={<Login />} />
                 <Route path='/regi' element={<Regi />} />

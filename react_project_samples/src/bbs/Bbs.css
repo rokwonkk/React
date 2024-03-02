@@ -38,7 +38,7 @@ th {
     margin-right: 10px;
 }
 
-.btn.bbsdetail, .btn.bbsupdate {
+.btn.bbsdetail, .btn.bbsupdate, .btn.bbsanswer {
     display: flex;
     justify-content: center;
 }
