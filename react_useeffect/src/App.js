@@ -28,9 +28,9 @@ const App = () => {
   // });
   /////////////////////////////////////////////////
 
-  // 2. 처음 rendering 이 될 때 useeffect가 1번 실행
+  //2. 처음 rendering 이 될 때 useeffect가 1번 실행
   // useEffect(() => {
-  //   console.log("useEffect 한번 실행 : " + count);
+  //   console.log("useEffect 처음 한번 실행 : " + count);
   // }, []);
 
   const numberCnt = () => {
@@ -39,8 +39,9 @@ const App = () => {
 
   // 3. useEffect 특정 값(변수) 변경이 되었을 때만 실행
   useEffect(() => { // <- update reflash
-    console.log("useEffect 특정 값 변경 -> 실행 " + number);
-  }, [number, count]); //다중으로 할땐 , 구분해서 적용하면됨
+    console.log("useEffect 넘버 값 변경 -> 실행 " + number);
+  }, 
+  [number]); //다중으로 할땐 , 구분해서 적용하면됨
 
   return (
     <div>
@@ -50,7 +51,7 @@ const App = () => {
       <br />
 
       <p>number : {number}</p>
-      <button onClick={() => numberCnt()}>카운터</button>
+      <button onClick={() => numberCnt()}>넘버</button>
     </div>
   );
 }
