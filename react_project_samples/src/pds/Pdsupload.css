@@ -1,0 +1,10 @@
+
+.table th.colorfy {
+    background: rgb(13, 202, 240);
+    color: white;
+}
+
+.tbody td{
+    vertical-align: middle;
+    text-align: center;
+}

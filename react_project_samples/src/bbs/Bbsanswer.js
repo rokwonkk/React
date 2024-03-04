@@ -7,7 +7,7 @@ import './Bbs.css';
 
 const Bbsanswer = () => {
     let navigate = useNavigate();   // bbslist로 이동하기 위해서
-    let params = useParams();   // seq 취득
+    let params = useParams();   // 받기 
 
     const [bbs, setBbs] = useState();
     const [loading, setLoading] = useState(false);
@@ -26,6 +26,7 @@ const Bbsanswer = () => {
         const BbsData = async (seq) => {
             const res = await axios.get('http://localhost:9922/bbsdetail', { params: { "id": id, "seq": seq } });
             setBbs(res.data);
+            
             setLoading(true);   // 여기서 rendering 해 준다
         };
 

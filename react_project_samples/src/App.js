@@ -14,6 +14,11 @@ import Bbsanswer from './bbs/Bbsanswer';
 import Login from './member/Login';
 import Regi from './member/Regi';
 
+import "./App.css";
+import Pdslist from './pds/Pdslist';
+import Pdsupload from './pds/Pdsupload';
+import Pdsdetail from './pds/Pdsdetail';
+
 const App = () => {
 
   return (
@@ -47,14 +52,18 @@ const App = () => {
               <Routes>
                 <Route path='/' element={<Home />} />
 
+                <Route path='/login' element={<Login />} />
+                <Route path='/regi' element={<Regi />} />
+
                 <Route path='/bbslist' element={<Bbslist />} />
                 <Route path='/bbswrite' element={<Bbswrite />} />
                 <Route path='/bbsdetail/:seq' element={<Bbsdetail />} />
                 <Route path='/bbsupdate/:seq' element={<Bbsupdate />} />
                 <Route path='/bbsanswer/:seq' element={<Bbsanswer />} />
 
-                <Route path='/login' element={<Login />} />
-                <Route path='/regi' element={<Regi />} />
+                <Route path='/pdslist' element={ <Pdslist /> } />
+                <Route path='/pdsupload' element={ <Pdsupload /> } />
+                <Route path='/pdsdetail/:seq' element={ <Pdsdetail /> } />
 
               </Routes>
             </div>
