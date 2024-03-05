@@ -23,7 +23,7 @@ const Pdsupload = () => {
             setId(login.id);     // (useState를 사용하지 말고)바로 넣어야 합니다
         } else {
             alert('login 해 주십시오');
-            localStorage.setItem("before", "/bbswrite");
+            localStorage.setItem("before", "/pdsupload");
 
             navigate("/login");
         }

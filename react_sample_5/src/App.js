@@ -33,7 +33,7 @@ const App = () => {
   let rnum = doubleFunc(numbers);
   console.log(rnum);
 
-  const str = numbers.map(function (num) {
+  const str = numbers.map((num) => {
     return (
       <div>
         hi {num}
@@ -66,7 +66,7 @@ const App = () => {
   ];
 
   //key 값은 중복되지 않는 번호를 넣어준다.
-  const memberList = members.map(function (member, index) {
+  const memberList = members.map((member, index) => {
     return (
       <tr key={member.number}>
         <th>{index + 1}</th>

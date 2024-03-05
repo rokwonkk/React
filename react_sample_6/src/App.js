@@ -4,8 +4,12 @@ const App = () => {
 
   let input_value = ""
 
-  function nextbutton() {
+  const nextbutton = () => {
     console.log('next click');
+  };
+
+  const nextbutton2 = () => {
+    console.log('next2 click');
   };
 
   // const inputVal = (e) => {
@@ -23,13 +27,15 @@ const App = () => {
     <div>
       <button onClick={() => { console.log('온클릭') }}>버튼</button>
 
-      <button onClick={() => nextbutton()}>next</button>
+      <button onClick={nextbutton}>next</button>
+
+      <button onClick={()=>nextbutton2()}>next2</button>
 
       {/* <button onSubmit={} onMouseOver={}></button> */}
       <br /><br />
 
       <input size={20} onChange={ (e) => { console.log(e.target.value) }}></input>
-      <input size={20} onChange={ inputVal }></input>
+      {/* <input size={20} onChange={ inputVal }></input> */}
 
 
       <br /><br />

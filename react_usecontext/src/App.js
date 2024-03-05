@@ -1,4 +1,4 @@
-//import { createContext, userContext } from 'react'
+// import { createContext, useContext } from 'react'
 import First from './First';
 
 // useContext를 사용하지 않고 값을 전달하는 경우
@@ -36,7 +36,7 @@ const Second = (props) => {
 //useContext 를 사용한 (간단한) 예
 const ContextObj = createContext();
 const UserComp = () => {
-  const msg = userContext((ContextObj));
+  const msg = useContext((ContextObj));
   return (
     <div>
       <h3>UserComp</h3>

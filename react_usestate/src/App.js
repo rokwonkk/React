@@ -1,6 +1,6 @@
-
-import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
-import Login from "./pages/Login";
+import { useState } from 'react';
+// import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
+// import Login from "./pages/Login";
 
 // const App = () => {
 
@@ -8,19 +8,23 @@ import Login from "./pages/Login";
 //   //
 //   const [name, setName] = useState("초기값");
 //   const [age, setAge] = useState(24);
-//   const [phone, setPhonee] = useState([]);
+//   const [phone, setPhone] = useState([1111, '-', 2222]);
 
 //   // setName('변경값'); //error
 //   // setName = '변경값'; //error
 
 //   const btnclick = () => {
 //     setName('버튼클릭');
+//     setAge(54);
+//     setPhone([3333, '-', 4444]);
 //   }
 
 //   return (
 //     <div>
+//       <h1>{ age }</h1>
+//       <h1>{ phone }</h1>
 //       <button onClick={btnclick}>{name}</button>
-//       <button onClick={() => btnclick() }>{name}</button>
+//       {/* <button onClick={() => btnclick() }>{name}</button> */}
 //     </div>
 //   );
 // }
@@ -66,84 +70,82 @@ return (
 //     </div>
 //   )
 // }
-/*
+
 /**
  *  셀렉트 버튼
  */
-/*
-const App = () => {
 
-  const [fruit, setFruit] = useState('사과'); 
+// const App = () => {
 
-    const handleChange = (e) => {
-    setFruit(e.target.value);
-  }
+//   const [fruit, setFruit] = useState('사과'); 
 
-  const selectFruit = () => {
-    alert(fruit);
-  }
+//     const handleChange = (e) => {
+//     setFruit(e.target.value);
+//   }
+
+//   const selectFruit = () => {
+//     alert(fruit);
+//   }
   
-  return(
-    <div>
-        <select value={fruit} onChange={handleChange}>
-          <option value="사과">apple</option>
-          <option value="배">pear</option>
-          <option value="포도">grape</option>
-        </select>
+//   return(
+//     <div>
+//         <select value={fruit} onChange={handleChange}>
+//           <option value="사과">apple</option>
+//           <option value="배">pear</option>
+//           <option value="포도">grape</option>
+//         </select>
 
-        <button onClick={() => selectFruit()}>선택</button>
-    </div>
-  );
-}
-*/
+//         <button onClick={() => selectFruit()}>선택</button>
+//     </div>
+//   );
+// }
 
 /**
  *  라디오버튼
  */
 
-// const App = () => {
+const App = () => {
 
-// const [color, setColor] = useState('blue');
+const [color, setColor] = useState('blue');
 
-//     const colorChange = (c) => {
-//       setColor(c.target.value);
-//     }
+    const colorChange = (c) => {
+      setColor(c.target.value);
+    }
 
-//   return (
-//     <div>
-//       <input type='radio' value="red" onChange={colorChange} checked={color === "red"} /> 빨강
-//       <input type='radio' value="green" onChange={colorChange} checked={color ===
-//          "green"} /> 초록
-//       <input type='radio' value="blue" onChange={colorChange} checked={color === "blue"} /> 파랑
+  return (
+    <div>
+      <input type='radio' value="red" onChange={colorChange} checked={color === "red"} /> 빨강
+      <input type='radio' value="green" onChange={colorChange} checked={color === "green"} /> 초록
+      <input type='radio' value="blue" onChange={colorChange} checked={color === "blue"} /> 파랑
 
-//       <button onClick={() => { alert(color); } }>선택</button>
-//     </div>
-//   )
-// }
+      <button onClick={() => { alert(color); } }>선택</button>
+    </div>
+  )
+}
 
 /**
  *  로그인
  */
 
-const App = () => {
-  return (
-    <div>
-      <BrowserRouter>
-        <h1> 메인 화 면 입 니 당 </h1>
-        <span>
-            <Link to="/login">로그인</Link>
-        </span>
-        <Routes>
-          {/* 웹 서비스 소개 페이지 */}
-          {/* <Route path="/" element={<FirstPage />} /> */}
-          {/* <SignIn /> */}
-          {/* <Route path="/signin" element={<SignIn />} /> */}
-          {/* <LogIn /> */}
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  )
-}
+// const App = () => {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//         <h1> 메인 화 면 입 니 당 </h1>
+//         <span>
+//             <Link to="/login">로그인</Link>
+//         </span>
+//         <Routes>
+//           {/* 웹 서비스 소개 페이지 */}
+//           {/* <Route path="/" element={<FirstPage />} /> */}
+//           {/* <SignIn /> */}
+//           {/* <Route path="/signin" element={<SignIn />} /> */}
+//           {/* <LogIn /> */}
+//           <Route path="/login" element={<Login />} />
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   )
+// }
 
 export default App;

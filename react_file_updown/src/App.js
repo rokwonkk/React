@@ -26,7 +26,7 @@ const App = () => {
     //보낸다.
     //multipart인 경우는 post로 보내더라도 두번째에 매개변수를 넣어준다.
     //보내는 형태의 axios 그렇기 때문에 받는 형태에서 사용된 async나 await를 사용하지 않는다.
-    axios.post("http://localhost:9922/fileupload", formData)
+    axios.post("http://localhost:9922/pdswrite", formData)
       .then((res) => {
         alert(res.data);
       })
@@ -36,7 +36,7 @@ const App = () => {
   }
 
   const download = async() => {
-    let filename = "favicon-16x16.png";
+    let filename = "복사본.docx";
 
     let url = "http://localhost:9922/filedownload?filename=" + filename;
 

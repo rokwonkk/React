@@ -18,6 +18,10 @@ import "./App.css";
 import Pdslist from './pds/Pdslist';
 import Pdsupload from './pds/Pdsupload';
 import Pdsdetail from './pds/Pdsdetail';
+import Imageview from './component/Imageview';
+import Calendar from './component/Calendar';
+import Summernote from './component/Summernote';
+import Infinityscoll from './component/Infinityscroll';
 
 const App = () => {
 
@@ -40,6 +44,18 @@ const App = () => {
                 </li>
                 <li className='nav-item'>
                   <Link className='nav-link' to="/pdslist">자료실</Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to="/Imageview">미리보기</Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to="/calendar">풀캘린더</Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to="/summernote">썸머노트</Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to="/infinityscroll">무한스크롤</Link>
                 </li>
               </ul>
             </div>
@@ -64,6 +80,11 @@ const App = () => {
                 <Route path='/pdslist' element={ <Pdslist /> } />
                 <Route path='/pdsupload' element={ <Pdsupload /> } />
                 <Route path='/pdsdetail/:seq' element={ <Pdsdetail /> } />
+
+                <Route path='/imageview' element={ <Imageview/>} />
+                <Route path='/calendar' element={ <Calendar/>} />
+                <Route path='/summernote' element={ <Summernote/>} />
+                <Route path='/infinityscroll' element={ <Infinityscoll/>} />
 
               </Routes>
             </div>
